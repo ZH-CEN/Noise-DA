@@ -20,16 +20,16 @@ for data in args.data.split('-'):
     '''uncommend the gdown code for specific downloads (commented for safety)'''
     if data == 'train':
         print('Rain13K Training Data!')
-        # gdown.download(id=rain13k_train, output='Datasets/train.zip', quiet=False)
-        os.system(f'gdrive download {rain13k_train} --path Datasets/')
+        gdown.download(id=rain13k_train, output='Datasets/train.zip', quiet=False)
+        # os.system(f'gdrive download {rain13k_train} --path Datasets/')
         print('Extracting Rain13K data...')
         shutil.unpack_archive('Datasets/train.zip', 'Datasets')
         os.remove('Datasets/train.zip')
 
     if data == 'test':
         print('Download Deraining Testing Data')
-        # gdown.download(id=rain13k_test, output='Datasets/test.zip', quiet=False)
-        os.system(f'gdrive download {rain13k_test} --path Datasets/')
+        gdown.download(id=rain13k_test, output='Datasets/test.zip', quiet=False)
+        # os.system(f'gdrive download {rain13k_test} --path Datasets/')
         print('Extracting test data...')
         shutil.unpack_archive('Datasets/test.zip', 'Datasets')
         os.remove('Datasets/test.zip')
